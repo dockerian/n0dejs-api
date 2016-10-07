@@ -1,0 +1,9 @@
+.git
+*.log
+*.log.*
+coverage
+ignore_*.yml
+logs
+node_modules
+nohup.out
+xtra

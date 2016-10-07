@@ -1,7 +1,12 @@
 # Logs
-logs
 *.log
+logs
 npm-debug.log*
+
+# Build data
+.dev
+*.out
+dist
 
 # Runtime data
 pids

@@ -1,0 +1,87 @@
+{
+  "name": "n0dejs-server",
+  "version": "1.0.0",
+  "description": "N0deJS Server",
+  "author": "jason.zhuyx@gmail.com",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "build": "babel src -d .dev",
+    "build:mon": "babel src --watch -d .dev",
+    "dev": "node ./.dev/index.js",
+    "dev:mon": "nodemon ./.dev/index.js localhost 8888",
+    "dev:babel": "babel-node ./src/index.js",
+    "start": "node ./dist/bundle.js",
+    "start:mon": "nodemon ./dist/bundle.js npm run start",
+    "stat": "netstat -antp tcp; echo ''; ps -aef",
+    "pretest": "gulp lint-and-beautify",
+    "posttest": "node ./node_modules/istanbul/lib/cli.js check-coverage",
+    "test": "node ./node_modules/istanbul/lib/cli.js cover _mocha",
+    "b": "babel-node"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node5"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bunyan": "^1.8.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "github": "^0.2.4",
+    "http-status-codes": "^1.0.6",
+    "lodash": "^4.16.4",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "node-fetch": "^1.6.3",
+    "uuid4": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-node5": "^11.1.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "eslint": "^3.7.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-header": "^1.8.8",
+    "gulp-jsbeautifier": "^2.0.3",
+    "gulp-mocha": "^3.0.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-util": "^3.0.7",
+    "istanbul": "^0.4.5",
+    "mocha": "^2.5.3",
+    "mockery": "^1.7.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.75.0",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "keywords": [
+    "api",
+    "es2015",
+    "es6",
+    "node",
+    "nodejs",
+    "rest"
+  ],
+  "homepage": "https://github.com/dockerian/n0dejs-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dockerian/n0dejs-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dockerian/n0dejs-api/issues"
+  }
+}
